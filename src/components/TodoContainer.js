@@ -3,6 +3,7 @@
 /* eslint-disable react/state-in-constructor */
 /* eslint-disable react/prefer-stateless-function */
 import React, { Component } from 'react';
+import TodosList from './TodosList';
 
 class TodoContainer extends Component {
   state = {
@@ -27,11 +28,7 @@ class TodoContainer extends Component {
 
   render() {
     return (
-      <ul>
-        { this.state.todos.map((todo) => (
-          <li key={todo.id}>{todo.title}</li>
-        ))}
-      </ul>
+      <TodosList todos={this.state.todos} />
     );
   }
 }
