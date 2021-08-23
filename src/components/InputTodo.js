@@ -4,6 +4,7 @@
 /* eslint-disable react/state-in-constructor */
 /* eslint-disable react/button-has-type */
 import React, { Component } from 'react';
+import { FaPlusCircle } from 'react-icons/fa';
 
 class InputTodo extends Component {
   state = {
@@ -32,7 +33,9 @@ class InputTodo extends Component {
     return (
       <form onSubmit={this.handleSubmit} className="form-container">
         <input className="input-text" type="text" name="title" placeholder="Add Todo ..." value={this.state.title} onChange={this.onChange} />
-        <button>Submit</button>
+        <button className="input-submit">
+          <FaPlusCircle color="darkcyan" size="20px" className="submit-icon" />
+        </button>
       </form>
     );
   }
