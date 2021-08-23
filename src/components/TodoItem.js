@@ -3,12 +3,14 @@
 /* eslint-disable react/prop-types */
 /* eslint-disable react/prefer-stateless-function */
 import React from 'react';
+import styles from './TodoItem.module.scss';
 
 class TodoItem extends React.Component {
   render() {
     return (
-      <li>
+      <li className={styles.item}>
         <input
+          className={styles.checkbox}
           type="checkbox"
           checked={this.props.todos.completed}
           onChange={() => this.props.handleChangeProps(this.props.todos.id)}
