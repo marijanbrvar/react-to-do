@@ -1,3 +1,4 @@
+/* eslint-disable react/button-has-type */
 /* eslint-disable react/destructuring-assignment */
 /* eslint-disable react/prop-types */
 /* eslint-disable react/prefer-stateless-function */
@@ -14,6 +15,7 @@ class TodoItem extends React.Component {
         />
         {' '}
         {this.props.todos.title}
+        <button onClick={() => this.props.delTodoProps(this.props.todos.id)}>Delete</button>
       </li>
     );
   }

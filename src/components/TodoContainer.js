@@ -29,6 +29,14 @@ class TodoContainer extends Component {
     ],
   };
 
+  delTodo = (id) => {
+    this.setState({
+      todos: [
+        ...this.state.todos.filter((todo) => todo.id !== id),
+      ],
+    });
+  };
+
   handleChange = (id) => {
     this.setState((prevState) => ({
       todos: prevState.todos.map((todo) => {
@@ -47,7 +55,11 @@ class TodoContainer extends Component {
     return (
       <>
         <Header />
-        <TodosList todos={this.state.todos} handleChangeProps={this.handleChange} />
+        <TodosList
+          todos={this.state.todos}
+          handleChangeProps={this.handleChange}
+          delTodoProps={this.delTodo}
+        />
       </>
     );
   }
