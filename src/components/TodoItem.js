@@ -3,8 +3,20 @@
 /* eslint-disable react/prefer-stateless-function */
 import React from 'react';
 
-function TodoItem(props) {
-  return <li>{props.title}</li>;
+class TodoItem extends React.Component {
+  render() {
+    return (
+      <li>
+        <input
+          type="checkbox"
+          checked={this.props.todos.completed}
+          onChange={() => this.props.handleChangeProps(this.props.todos.id)}
+        />
+        {' '}
+        {this.props.todos.title}
+      </li>
+    );
+  }
 }
 
 export default TodoItem;
